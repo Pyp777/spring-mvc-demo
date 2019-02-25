@@ -7,7 +7,10 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Range;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Student {
+	@JsonProperty("jasonName")
 	private String name;
 	private String hobby;
 	private String phone;
@@ -19,6 +22,21 @@ public class Student {
 	private Integer age;
 	
 	private Date birth;
+
+	
+	public Student() {
+		
+	}
+
+	public Student(String name, String hobby, String phone,
+			@NotNull @Range(min = 5, max = 25, message = "moc velkky nebo moc maly") Integer age, Date birth) {
+		super();
+		this.name = name;
+		this.hobby = hobby;
+		this.phone = phone;
+		this.age = age;
+		this.birth = birth;
+	}
 
 	public Integer getAge() {
 		return age;
