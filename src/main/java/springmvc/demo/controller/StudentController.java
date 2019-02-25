@@ -113,6 +113,7 @@ public class StudentController {
 		return "student";
 	}
 	
+	/* may be here or in controlleradvice
 	@ExceptionHandler( org.springframework.validation.BindException.class)
 	protected String handleException(org.springframework.validation.BindException objException, Model model)
 	{
@@ -120,5 +121,6 @@ public class StudentController {
 		model.addAttribute("message", "Zleeee " + objException.getBindingResult());
 		return "student";
 	}
+	*/
 	
 }
